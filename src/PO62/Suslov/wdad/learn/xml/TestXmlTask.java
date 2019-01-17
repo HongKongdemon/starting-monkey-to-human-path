@@ -1,5 +1,6 @@
 package PO62.Suslov.wdad.learn.xml;
 
+import PO62.Suslov.wdad.data.managers.PreferencesManager;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -14,7 +15,7 @@ public class TestXmlTask {
 
         XmlTask xmlTask = new XmlTask();
         String answer = xmlTask.getNoteText(owner, "Заголовок" );
-        System.out.print(answer);
+        System.out.println(answer);
 
         xmlTask.updateNote(owner,"Заголовок", "Новый текст");
 
@@ -24,7 +25,15 @@ public class TestXmlTask {
         user.setRights("R");
 
 
-        xmlTask.setPrivileges("Заголовок2",user,0);
+        xmlTask.setPrivileges("Заголовок2",user,3);
+
+        PreferencesManager manag = new PreferencesManager();
+
+        String tx = manag.getClassProvider();
+        System.out.println(tx);
+
+        manag.setCreateRegistry("No");
+
 
     }
 }
