@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<notes>
+  <note>
+    <title>Заголовок</title>
+    <text>Новый текст</text>
+    <owner mail="Почта" name="Имя" />
+    <privileges>
+      <ALL rights="R" />
+    </privileges>
+  </note>
+  <note>
+    <title>Заголовок2</title>
+    <text>Текст2</text>
+    <owner mail="Почта2" name="Имя2" />
+    <privileges>
+      <user mail="Почта пользователя2" name="Имя пользователя2" rights="R" />
+    </privileges>
+  </note>
+</notes>
