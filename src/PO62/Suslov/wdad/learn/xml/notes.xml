@@ -2,9 +2,9 @@
 <!DOCTYPE notes SYSTEM "notes.dtd">
 <notes>
   <note>
-    <title>Заголовок</title>
+    <title>Title1</title>
     <text>Новый текст</text>
-    <owner mail="Почта" name="Имя" />
+    <owner mail="Mail1" name="Name1" />
     <privileges>
       <ALL rights="R" />
     </privileges>
@@ -14,6 +14,16 @@
     <text>Текст2</text>
     <owner mail="Почта2" name="Имя2" />
     <privileges>
+      <user mail="Почта пользователя1" name="Имя пользователя1" rights="RW" />
+      <user mail="Почта пользователя2" name="Имя пользователя2" rights="R" />
+    </privileges>
+  </note>
+  <note>
+    <title>Title1</title>
+    <text>Текст2</text>
+    <owner mail="Mail1" name="Name1" />
+    <privileges>
+      <user mail="Mail1" name="Имя пользователя1" rights="RW" />
       <user mail="Почта пользователя2" name="Имя пользователя2" rights="R" />
     </privileges>
   </note>

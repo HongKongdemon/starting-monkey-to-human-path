@@ -21,15 +21,15 @@
   <rmi>
     <server>
       <registry>
-        <createregistry>No</createregistry>
+        <createregistry>yes</createregistry>
         <registryaddress>localhost</registryaddress>
-        <registryport>1099</registryport>
+        <registryport>25565</registryport>
       </registry>
     </server>
     <client>
-      <policypath>client.policy</policypath>
-      <usecodebaseonly>no</usecodebaseonly>
+      <policypath>C:\Users\danila\Desktop\starting-monkey-to-human-path\security.policy</policypath>
+      <usecodebaseonly>yes</usecodebaseonly>
     </client>
-    <classprovider>http://www.yourhost.free.ru/cp/cp.jar</classprovider>
+    <classprovider></classprovider>
   </rmi>
 </appconfig>

@@ -17,7 +17,7 @@ public class TestXmlTask {
         String answer = xmlTask.getNoteText(owner, "Заголовок" );
         System.out.println(answer);
 
-        xmlTask.updateNote(owner,"Заголовок", "Новый текст");
+        //xmlTask.updateNote(owner,"Заголовок", "Новый текст");
 
         User user = new User();
         user.setName("Имя пользователя1");

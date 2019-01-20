@@ -53,13 +53,49 @@ public class XmlTask
         }
         return text;
     }
-    public void updateNote(User owner, String title, String newText) throws IOException {
+    public void updateNote(User owner, String title, StringBuilder newText) throws IOException {
         for (Element noteEl : nodeListElements) {
             if(noteEl.getChildText("title").equals(title) && noteEl.getChild("owner").getAttributeValue("name").equals(owner.getName()) && noteEl.getChild("owner").getAttributeValue("mail").equals(owner.getMail()))
-                noteEl.getChild("text").setText(newText);
+                noteEl.getChild("text").setText(newText.toString());
         }
         xmlOut.setFormat(Format.getPrettyFormat());
         xmlOut.output(jdomDocument, new FileWriter(fileName));
+    }
+    public Note getNote(User owner, String title){
+        String text = "";
+        Note note = new Note();
+        for (Element noteEl : nodeListElements) {
+            if (noteEl.getChildText("title").equals(title) && noteEl.getChild("owner").getAttributeValue("name").equals(owner.getName()) && noteEl.getChild("owner").getAttributeValue("mail").equals(owner.getMail())) {
+                note.setText(noteEl.getChildText("text"));
+                note.setTitle(noteEl.getChildText("title"));
+                User user = new User();
+                user.setMail(noteEl.getChild("owner").getAttributeValue("mail"));
+                user.setName(noteEl.getChild("owner").getAttributeValue("name"));
+                note.setOwner(user);
+                return note;
+            }
+        }
+        return  null;
+    }
+
+    public List<Note> getNotes(User owner){
+        List<Note> notes = new ArrayList<>();
+        Note note = new Note();
+        for (Element noteEl : nodeListElements) {
+            if (noteEl.getChild("owner").getAttributeValue("mail").equals(owner.getMail()) && noteEl.getChild("owner").getAttributeValue("name").equals(owner.getName()))
+            {
+                note = new Note();
+                note.setText(noteEl.getChildText("text"));
+                note.setTitle(noteEl.getChildText("title"));
+                User user = new User();
+                user.setMail(noteEl.getChild("owner").getAttributeValue("mail"));
+                user.setName(noteEl.getChild("owner").getAttributeValue("name"));
+                note.setOwner(user);
+                notes.add(note);
+            }
+
+        }
+        return  notes;
     }
     public void setPrivileges(String noteTitle, User user, int newRights) throws IOException {
         for (Element noteEl : nodeListElements) {
