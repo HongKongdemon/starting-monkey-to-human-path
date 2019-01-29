@@ -1,8 +1,8 @@
 package PO62.Suslov.wdad.learn.xml;
 
-import java.util.Objects;
+import java.io.Serializable;
 
-public class User {
+public class User implements Serializable {
     private String mail;
     private String name;
     private String rights;
