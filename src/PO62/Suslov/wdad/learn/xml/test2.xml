@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE notes SYSTEM "notes.dtd">
+<notes>
+    <note>
+        <title>Лабы</title>
+        <text>Сделать 1 лабу</text>
+        <owner mail="test@yandex.ru" name="test"/>
+        <privileges>
+            <user mail="test@yandex.ru" name="test" rights="RW" />
+            <user mail="user@yandex.ru" name="user" />
+        </privileges>
+    </note>
+    <note>
+        <title>Лабы</title>
+        <text>Сделать 2 лабу</text>
+        <owner mail="user@yandex.ru" name="user"/>
+        <privileges>
+            <user mail="test@yandex.ru" name="test" />
+            <user mail="user@yandex.ru" name="user" rights="RW" />
+        </privileges>
+    </note>
+</notes>
