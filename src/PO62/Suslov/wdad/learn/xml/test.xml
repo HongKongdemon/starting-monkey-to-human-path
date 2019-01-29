@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE notes SYSTEM "notes.dtd">
 <notes>
-    <note>
-        <title>Еда</title>
-        <text>Сделать покушать</text>
-        <owner mail="test@yandex.ru" name="test"/>
-        <privileges>
-            <ALL />
-        </privileges>
-    </note>
+  <note>
+    <title>Еда</title>
+    <text>Сделать покушать 2.0</text>
+    <owner mail="test@yandex.ru" name="test" />
+    <privileges>
+      <ALL rights="R" />
+    </privileges>
+  </note>
 </notes>
