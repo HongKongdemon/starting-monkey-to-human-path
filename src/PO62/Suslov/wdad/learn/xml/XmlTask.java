@@ -13,6 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class XmlTask {
@@ -116,5 +117,26 @@ public class XmlTask {
         XMLOutputter xmlOutputter = new XMLOutputter();
         xmlOutputter.setFormat(Format.getPrettyFormat());
         xmlOutputter.output(document, new FileWriter(path));
+    }
+
+    public List<Note> getNotes(User owner) {
+        Element root = document.getRootElement();
+
+        List<Note> notes = new ArrayList<>();
+        List<Element> childs = root.getChildren("note");
+        for (Element child: childs) {
+            Element childOwner = child.getChild("owner");
+            String email = childOwner.getAttribute("mail").getValue();
+            String name = childOwner.getAttribute("name").getValue();
+
+            if (email.equals(owner.getMail()) && name.equals(owner.getName())) {
+                String title = child.getChild("title").getText();
+                String text = child.getChild("text").getText();
+
+                notes.add(new Note(title, text));
+            }
+        }
+
+        return notes;
     }
 }
