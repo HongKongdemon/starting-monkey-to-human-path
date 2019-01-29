@@ -1,5 +1,6 @@
 package PO62.Suslov.wdad.learn.rmi;
 
+import PO62.Suslov.wdad.data.managers.DataManager;
 import PO62.Suslov.wdad.learn.xml.Note;
 import PO62.Suslov.wdad.learn.xml.User;
 import PO62.Suslov.wdad.learn.xml.XmlTask;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.List;
 
-public class XmlDataManagerImpl implements XmlDataManager {
+public class XmlDataManagerImpl implements DataManager {
     private XmlTask xmlTask;
 
     public XmlDataManagerImpl(String path) throws ParserConfigurationException, SAXException, IOException {

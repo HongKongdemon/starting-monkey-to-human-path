@@ -1,10 +1,10 @@
 package PO62.Suslov.wdad.learn.rmi;
 
+import PO62.Suslov.wdad.data.managers.DataManager;
 import PO62.Suslov.wdad.data.managers.PreferencesManager;
 import PO62.Suslov.wdad.utils.PreferencesManagerConstants;
 import org.xml.sax.SAXException;
 
-import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.rmi.AlreadyBoundException;
@@ -22,8 +22,8 @@ public class Server {
         }
 
         try {
-            XmlDataManager xmlDataManager = new XmlDataManagerImpl("src/PO62/Suslov/wdad/learn/xml/test.xml");
-            XmlDataManager stub = (XmlDataManager) UnicastRemoteObject.exportObject(xmlDataManager, 0);
+            DataManager xmlDataManager = new XmlDataManagerImpl("src/PO62/Suslov/wdad/learn/xml/test.xml");
+            DataManager stub = (DataManager) UnicastRemoteObject.exportObject(xmlDataManager, 0);
             Registry registry;
             if (preferencesManager.getProperty(PreferencesManagerConstants.CREATEREGISTRY).equals("yes")) {
                 registry = LocateRegistry.createRegistry(Integer.parseInt(preferencesManager.getProperty(PreferencesManagerConstants.REGISTRYPORT)));
