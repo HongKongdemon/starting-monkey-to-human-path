@@ -1,6 +1,7 @@
 package PO62.Suslov.wdad.learn.xml;
 
 import PO62.Suslov.wdad.data.managers.PreferencesManager;
+import PO62.Suslov.wdad.utils.PreferencesManagerConstants;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -24,6 +25,6 @@ public class TestXmlTask {
 
         System.out.println(test2.getNoteText(user2, "Лабы"));
 
-        System.out.println(PreferencesManager.getInstance().getRegistryAddress());
+        PreferencesManager.getInstance().setProperty(PreferencesManagerConstants.REGISTRYADDRESS, "localhost2");
     }
 }
